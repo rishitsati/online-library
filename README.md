@@ -1,16 +1,41 @@
-# React + Vite
+# Aurora Library (Online Library System)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aurora Library is a small online library experience built with React, Vite, Redux Toolkit, React Router, and Tailwind CSS. It ships with curated dummy data, dynamic category browsing, search, book details, add-a-book flow, and a custom 404 page.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React 19 + Vite
+- Redux Toolkit + React Redux
+- React Router
+- Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
+```bash
+# install dependencies
+npm install
 
-## React Compiler
+# start dev server
+npm run dev
+# then open the shown localhost URL
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Available Scripts
+- `npm run dev` – start local dev server
+- `npm run build` – production build
+- `npm run preview` – preview the production build locally
+- `npm run lint` – lint the project
 
-## Expanding the ESLint configuration
+## App Overview
+- Home: welcome hero, category chips, and popular books.
+- Browse Books: filter by category via `/books/:category`, search by title/author, and open details.
+- Book Details: view full info with back/browse actions.
+- Add Book: validated form that dispatches to Redux and redirects to Browse with the new book at the top.
+- 404: friendly not-found page showing the invalid URL and link back home.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+- `src/pages` – route pages (Home, BrowseBooks, BookDetails, AddBook, NotFound)
+- `src/components` – shared UI (Navbar, Layout, BookCard)
+- `src/features/books` – Redux slice with dummy data and addBook reducer
+- `src/store` – Redux store setup
+
+## Styling
+Tailwind CSS is configured in `tailwind.config.js` and `postcss.config.js`. Global styles and Tailwind directives live in `src/index.css`.
